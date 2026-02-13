@@ -1,0 +1,20 @@
+public class HelloWorld {
+  
+    public static double earthMoonWeight(String name, int weight, String unit){
+        double weightMoon = weight * 1.62/9.81;
+        return weightMoon;
+    }
+
+    public static void main(String[] args) {
+        int weightOnEarth = 65;
+        String unit = "kg";
+        String name = "Denis";
+
+        // Using method and saving in the double variable
+        double weightOnMoon = earthMoonWeight(name,weightOnEarth,unit);
+        // Using String format to transform a great number in a small one like 10.7kg
+        String weightOnMoonF = String.format("%.1f",weightOnMoon);
+        // Printing the formated weightOnMoon variable as weightOnMoonF
+        System.out.println("Hi "+ name +"\n Your weight on Earth is "+ weightOnEarth + unit +" and your weight on the moon would be about "+ weightOnMoonF + unit +".");
+    }
+}
