@@ -5,11 +5,14 @@ public class HelloWorld {
     String color;
     String gender;
     boolean scarf;
+
+
   };
 
   public static void main(String[] args) {
       // Write your code here 💖
 
+      // NEW NEOPET - GRAVATIA
       Neopet gravatia = new Neopet();
       gravatia.name = "Gravatia";
       gravatia.species = "Eyrie";
@@ -17,6 +20,7 @@ public class HelloWorld {
       gravatia.gender = "F";
       gravatia.scarf = false;
       
+      // Global variables
       String scarfText;
       String genderText;
 
@@ -34,5 +38,29 @@ public class HelloWorld {
 
       System.out.println(gravatia.name + " is a Neopet from specie " + gravatia.species + 
       " and color " + gravatia.color + " of the gender " + genderText + " and " + scarfText);
+      
+      // NEW NEOPET - GOLDENBER
+
+      Neopet goldenber = new Neopet();
+      goldenber.name = "Goldenber";
+      goldenber.species = "Dragon";
+      goldenber.color = "Gold";
+      goldenber.gender = "M";
+      goldenber.scarf = true;
+
+      if (goldenber.scarf){
+        scarfText = "don't have a scarf on her.";
+      } else {
+        scarfText = "has a scarf on her.";
+      };
+
+      if (goldenber.gender.equals ("F")){
+        genderText = "female";
+      } else {
+        genderText = "male";
+      };
+
+      System.out.println("\n" + goldenber.name + " is a Neopet from specie " + goldenber.species + 
+      " and color " + goldenber.color + " of the gender " + genderText + " and " + scarfText);
   }
 }
