@@ -1,0 +1,54 @@
+class Order {
+  String orderName;
+  String drinkName;
+  double price;
+  boolean isIced;
+  char size;
+  boolean toGo;
+
+  Order(String orderName, String drinkName, double price, boolean isIced, char size, boolean toGo) {  
+    this.orderName = orderName;
+    this.drinkName = drinkName;
+    this.price = price;
+    this.isIced = isIced;
+    this.size = size;
+    this.toGo = toGo;
+  }
+
+  Order(String orderName, String drinkName, double price){
+    this.orderName = orderName;
+    this.drinkName = drinkName;
+    this.price = price;
+    this.isIced = true;
+    this.size = 'M';
+    this.toGo = false;
+  }
+
+  public void printOrder() {
+    System.out.println(" | ~ Coffee Shop Order ~ |\n");
+    System.out.println(" --------------------------");
+    System.out.println(" Order for " + this.orderName + ": " + this.drinkName);
+    System.out.println(" Size: " + this.size);
+    System.out.println(" Iced? " + (this.isIced ? "Yes" : "No"));
+    System.out.println(" To go? " + (this.toGo ? "Yes" : "No"));
+    System.out.println(" Total: " + this.price + "\n");
+    System.out.println(" --------------------------");
+    System.out.println(" --------------------------\n");
+  }
+}
+
+public class Main {
+
+    // Order parameters: (1)name,(2)drink name,(3)price,(4)iced?,(5)size,(6)togo ?
+
+    public static void main(String[] args) {
+        Order order1 = new Order("Elliot", "Matcha Latte", 6.99, true, 'L', false);
+        Order order2 = new Order("Kate", "Espresso", 4.99,true,'M',true);
+        Order order3 = new Order("Allison", "Mocha Latte", 7.99);
+
+        order1.printOrder();
+        order2.printOrder();
+        order3.printOrder();
+
+    }
+}
