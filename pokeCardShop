@@ -1,0 +1,26 @@
+// The Product class has been created for you! 💖
+
+class Product {
+    String name;
+    double price;
+
+    // Add a constructor here 💖
+    Product(String name, double price){
+      this.name = name;
+      this.price = price;
+
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+    
+        // Test your code here! 💖
+        Product pokecard1 = new Product("Pikachu Legendary", 800.20);
+        Product pokecard2 = new Product("Bulbassar", 13.40);
+
+        System.out.println("|Cards Available in Shop|\n");
+        System.out.println(pokecard1.name + "\n$ " + pokecard1.price + "\n");
+        System.out.println(pokecard2.name + "\n$ " + pokecard1.price + "\n");
+    }
+}
