@@ -24,8 +24,8 @@ class Order {
         System.out.println("\n| ~ Coffee Shop Order ~ |\n");
         System.out.println("Order for " + this.orderName + ": " + this.drinkName);
         System.out.println("Size: " + this.size);
-        System.out.println("Iced? " + (this.isIced ? "Yes" : "No"));
-        System.out.println("To go? " + (this.toGo ? "Yes" : "No"));
+        System.out.println("Iced? " + (this.isIced ? "Yes" : "No\n"));
+        System.out.println("To go? " + (this.toGo ? "Yes" : "No\n"));
         System.out.println("Total: $" + this.price);
         System.out.println("--------------------------\n");
     }
