@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// 1. Classe Order (FORA da classe Main, mas no mesmo arquivo)
 class Order {
     String orderName;
     String drinkName;
@@ -9,7 +8,6 @@ class Order {
     char size;
     boolean toGo;
 
-    // Construtor Completo
     Order(String orderName, String drinkName, double price, boolean isIced, char size, boolean toGo) {  
         this.orderName = orderName;
         this.drinkName = drinkName;
@@ -20,50 +18,66 @@ class Order {
     }
 
     public void printOrder() {
-        System.out.println("--------------------------\n");
-        System.out.println("\n| ~ Coffee Shop Order ~ |\n");
-        System.out.println("Order for " + this.orderName + ": " + this.drinkName);
-        System.out.println("Size: " + this.size);
-        System.out.println("Iced? " + (this.isIced ? "Yes" : "No\n"));
-        System.out.println("To go? " + (this.toGo ? "Yes" : "No\n"));
-        System.out.println("Total: $" + this.price);
+        System.out.println("| ~ Coffee Shop Order ~ |");
+        System.out.println("--------------------------");
+        System.out.println("\nClient: " + this.orderName);
+        System.out.println("\nDrink: " + this.drinkName);
+        System.out.println("\nSize: " + this.size + " | Iced: " + (this.isIced ? "Yes" : "No"));
+        System.out.println("\nTo go: " + (this.toGo ? "Yes" : "No"));
+        System.out.println("\nTotal: $" + this.price);
         System.out.println("--------------------------\n");
     }
 }
 
-// 2. Classe Main (A classe principal do arquivo)
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        boolean nextCustomer = true;
 
-        System.out.println("| ~ Coffee Shop ~ |");
+        while (nextCustomer) {
+            System.out.println("| ~ Coffee Shop ~ |");
 
-        System.out.print("Client: ");
-        String readerName = scanner.nextLine();
+            System.out.print("Client Name: ");
+            String name = scanner.nextLine();
 
-        System.out.print("Drink: ");
-        String readerDrink = scanner.nextLine();
+            System.out.print("Drink Name: ");
+            String drink = scanner.nextLine();
 
-        System.out.print("Price: ");
-        double readerPrice = scanner.nextDouble();
+            System.out.print("Price: ");
+            double price = scanner.nextDouble();
 
-        // Menu de Tamanho
-        System.out.println("Size (1|P) (2|M) (3|G): ");
-        int readerSize = scanner.nextInt();
-        char size = (readerSize == 1) ? 'P' : (readerSize == 3 ? 'G' : 'M');
+            System.out.print("Size (1|P, 2|M, 3|G): ");
+            int s = scanner.nextInt();
+            char size = (s == 1) ? 'P' : (s == 3 ? 'G' : 'M');
 
-        // Menu de Gelo
-        System.out.println("Iced (1|Yes) (2|No): ");
-        boolean isIced = (scanner.nextInt() == 1);
+            System.out.print("Iced (1|Yes, 2|No): ");
+            boolean iced = (scanner.nextInt() == 1);
 
-        // Menu Para Levar
-        System.out.println("To Go (1|Yes) (2|No): ");
-        boolean toGo = (scanner.nextInt() == 1);
+            System.out.print("To Go (1|Yes, 2|No): ");
+            boolean toGo = (scanner.nextInt() == 1);
 
-        // AGORA O JAVA VAI ENCONTRAR A CLASSE ORDER
-        Order finishedOrder = new Order(readerName, readerDrink, readerPrice, isIced, size, toGo);
-        finishedOrder.printOrder();
+            System.out.println("\nConfirm order? (1|Yes, 2|Cancel)");
+            int confirm = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("--------------------------\n");
 
+            if (confirm == 1) {
+                Order clientOrder = new Order(name, drink, price, iced, size, toGo);
+                clientOrder.printOrder();
+            } else {
+                System.out.println("Order Canceled.");
+            }
+
+            System.out.print("Next customer? (1|Yes, 2|Exit): ");
+            int resp = scanner.nextInt();
+            scanner.nextLine();
+            
+            if (resp != 1) {
+                nextCustomer = false;
+            }
+        }
+
+        System.out.println("System Closed.");
         scanner.close();
     }
 }
