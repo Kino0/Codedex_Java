@@ -6,6 +6,15 @@ public class HelloWorld {
     String gender;
     boolean scarf;
 
+    double strength;
+    double defense;
+    double movement;
+
+    Neopet(){
+      this.strength = 0.0;
+      this.defense = 0.0;
+      this.movement = 0.0;
+    }
 
   };
 
@@ -38,7 +47,10 @@ public class HelloWorld {
 
       System.out.println(gravatia.name + " is a Neopet from specie " + gravatia.species + 
       " and color " + gravatia.color + " of the gender " + genderText + " and " + scarfText);
-      
+      System.out.println("S: " + gravatia.strength);
+      System.out.println("D: " + gravatia.defense);
+      System.out.println("M: " + gravatia.movement);
+          
       // NEW NEOPET - GOLDENBER
 
       Neopet goldenber = new Neopet();
@@ -62,5 +74,8 @@ public class HelloWorld {
 
       System.out.println("\n" + goldenber.name + " is a Neopet from specie " + goldenber.species + 
       " and color " + goldenber.color + " of the gender " + genderText + " and " + scarfText);
+      System.out.println("S: " + gravatia.strength);
+      System.out.println("D: " + gravatia.defense);
+      System.out.println("M: " + gravatia.movement);
   }
 }
