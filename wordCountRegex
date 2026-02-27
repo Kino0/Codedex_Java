@@ -1,0 +1,20 @@
+// Add your import statement here! 💖
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Add your code here! 💖
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Insert some words here: ");
+        String sentence = scan.nextLine();
+
+        String[] words = sentence.trim().split("\\s+");
+
+        int wordCount = (sentence.trim().isEmpty()) ? 0 : words.length;
+
+        System.out.println("This sentence has " + wordCount + " words!");
+
+        scan.close();
+    }
+}
