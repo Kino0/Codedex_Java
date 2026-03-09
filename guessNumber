@@ -1,0 +1,24 @@
+// Add your import statement here! 💖
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Add your code here! 💖
+        Random rand = new Random();
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um número de 1 ~ 10: ");
+        int number = scan.nextInt();
+        int guess = rand.nextInt(number) + 1;
+
+        while (number != guess){
+            System.out.println("O número sorteado foi: " + guess + "\nVocê não acertou!\n");
+            System.out.println("Tente novamente: ");
+
+            number = scan.nextInt();
+            guess = rand.nextInt(number) + 1;
+        }
+        System.out.println("O número sorteado foi: " + guess + "\nVocê acertou!");
+    }
+}
