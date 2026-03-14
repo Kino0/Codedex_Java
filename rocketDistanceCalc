@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Rockets {
+
+    public static int launchCalculator(double timeOne, double timeTwo){
+    double result = timeOne * timeTwo;
+    return (int) Math.round(result);
+    };
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Input the speed: ");
+        double speed = scan.nextDouble();
+
+        System.out.println("Input the time: ");
+        double time = scan.nextDouble();
+
+        int roundedDistance = launchCalculator(speed,time);
+        System.out.println("Rounded distance: " + roundedDistance + " meters.");
+
+    }
+}
