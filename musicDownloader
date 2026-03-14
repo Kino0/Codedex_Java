@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+        // Add your code here! 💖
+        MusicDownloader song1 = new MusicDownloader("Pink Pony Club","Chappell Roan","Midwest Princess","https://www.spotify.com/pink-pony-club.mp3", 2023);
+        song1.showFileLink("Pink Pony Club");
+    }
+}
+
+// Add your class here! 💖
+ class MusicDownloader {
+     String songName;
+     String artistName;
+     String album;
+     String fileLink;
+     int releaseYear;
+
+    public MusicDownloader(String songName, String artistName, String album, String fileLink, int releaseYear){
+    this.songName = songName;
+    this.artistName = artistName;
+    this.album = album;
+    this.fileLink = fileLink;
+    this.releaseYear = releaseYear;
+};
+
+public void showFileLink(String songName){
+    if (this.songName.trim().equalsIgnoreCase(songName.trim())){
+        System.out.println("Link for " + songName + " is: " + fileLink);
+        } else {
+            System.out.println("Please inform the correct song. (Spaces included)");
+        }
+    };
+};
