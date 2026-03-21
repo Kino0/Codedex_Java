@@ -1,0 +1,48 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class HelloWorld {
+
+  // Static method/function for calculation
+  static double calcularInflacao(double min, double max, Random rand) {
+    return min + (max - min) * rand.nextDouble();
+    }
+
+  public static void main(String[] args) {
+   
+    Scanner scan = new Scanner(System.in);
+    Random rand = new Random();
+   
+    // Valors for $ 1 USD convertion base rates
+    double taxRupees = 0.44;
+    double taxGil = 54.87;
+    double taxGolden = 2.23;
+
+    double max = 0.05;
+    double min = -0.03;
+
+    System.out.println("What's your $USD balance?");
+    double usdValor = scan.nextDouble();
+
+    // Inflation calculation values
+    double infRupees = calcularInflacao(min, max, rand);
+    double infGil = calcularInflacao(min, max, rand);
+    double infGolden = calcularInflacao(min, max, rand);
+
+    // Use of the 1+ for inflation calculation
+    double calcRupees = taxRupees * (1 + infRupees);
+    double calcGil = taxGil * (1 + infGil);
+    double calcGolden = taxGolden * (1 + infGolden);
+
+    // Converted amounts calculation
+    double convertedRupees = usdValor * calcRupees ;
+    double convertedGil = usdValor * calcGil;
+    double convertedGolden = usdValor * calcGolden;
+
+    System.out.printf("\nRupees: %.2f%n", convertedRupees);
+    System.out.printf("\nGil: %.2f%n", convertedGil);
+    System.out.printf("\nGolden: %.2f%n", convertedGolden);
+   
+    scan.close();
+  }
+}
